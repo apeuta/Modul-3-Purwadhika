@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import plotly
 import plotly.graph_objects as go
 import chart_studio.plotly as csp
@@ -15,5 +15,9 @@ def plot():
     graphic = json.dumps([plot], cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("plot.html", plot= graphic)
 
+@app.route("/storage/<path:x>")
+def storage(x):
+    return send_from_directory("myfile", x)
+
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.run(debug= True, port=2020)

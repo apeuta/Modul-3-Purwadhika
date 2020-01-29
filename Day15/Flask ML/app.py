@@ -1,15 +1,28 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 import joblib
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return f"Prediksi 1, 1, 1, 1 = {model.predict([[1,1,1,1]])[0]}"
+    return "Let's Predict Something!!"
 
-@app.route("/tes")
+@app.route("/predict", methods= ["POST"])
 def tes():
-    return f"Prediksi 2, 9, 9, 3 = {model.predict([[2,9,9,3]])[0]}"
+    if request.method == "POST":
+        body = request.json
+        sl = body["sl"]
+        sw = body["sw"]
+        pl = body["pl"]
+        pw = body["pw"]
+        data = {
+            "sl": sl, "sw" : sw, "pl": pl, "pw": pw,
+            "zprediksi": model.predict([[sl, sw, pl, pw]])[0]
+            }
+        return jsonify(data)
+    else:
+        return "You need to post something..."
+
 
 if __name__ == "__main__":
     model = joblib.load("modelJoblib")

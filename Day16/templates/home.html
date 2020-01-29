@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Klasifikasi Iris</title>
+</head>
+<body>
+    <h1>Prediksi Iris</h1>
+    <form method="POST" action="http://127.0.0.1:5000/predict">
+        Sepal Length (cm) :<input type="number" name="SL" step= "0.01"
+        min="1" max="15" placeholder="Ketik di sini ..."/> <br>
+        Sepal Width (cm) :<input type="number" name="SW" step= "0.01"
+        min="1" max="15" placeholder="Ketik di sini ..."/> <br>
+        Petal Length (cm) :<input type="number" name="PL" step= "0.01"
+        min="1" max="15" placeholder="Ketik di sini ..."/> <br>
+        Petal Width (cm) :<input type="number" name="PW" step= "0.01"
+        min="1" max="15" placeholder="Ketik di sini ..."/> <br>
+        <input type="submit" value="Classify" />
+    </form>
+</body>
+</html>

@@ -20,4 +20,4 @@ def storage(x):
     return send_from_directory("myfile", x)
 
 if __name__ == "__main__":
-    app.run(debug= True, port=2020)
+    app.run(debug= True)

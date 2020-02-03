@@ -1,0 +1,24 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="PW <= 0.8\ngini = 0.666\nsamples = 84\nvalue = [47, 42, 46]\nclass = Setosa"] ;
+1 [label="gini = 0.0\nsamples = 28\nvalue = [47, 0, 0]\nclass = Setosa"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="PL <= 4.75\ngini = 0.499\nsamples = 56\nvalue = [0, 42, 46]\nclass = Virginica"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label="SL <= 4.95\ngini = 0.05\nsamples = 29\nvalue = [0, 38, 1]\nclass = Versicolor"] ;
+2 -> 3 ;
+4 [label="SW <= 2.45\ngini = 0.5\nsamples = 2\nvalue = [0, 1, 1]\nclass = Versicolor"] ;
+3 -> 4 ;
+5 [label="gini = 0.0\nsamples = 1\nvalue = [0, 1, 0]\nclass = Versicolor"] ;
+4 -> 5 ;
+6 [label="gini = 0.0\nsamples = 1\nvalue = [0, 0, 1]\nclass = Virginica"] ;
+4 -> 6 ;
+7 [label="gini = 0.0\nsamples = 27\nvalue = [0, 37, 0]\nclass = Versicolor"] ;
+3 -> 7 ;
+8 [label="PW <= 1.75\ngini = 0.15\nsamples = 27\nvalue = [0, 4, 45]\nclass = Virginica"] ;
+2 -> 8 ;
+9 [label="gini = 0.0\nsamples = 3\nvalue = [0, 4, 0]\nclass = Versicolor"] ;
+8 -> 9 ;
+10 [label="gini = 0.0\nsamples = 24\nvalue = [0, 0, 45]\nclass = Virginica"] ;
+8 -> 10 ;
+}
